@@ -5,38 +5,38 @@ import './styles.css';
 
 const IMG='/images/unicorn-raw/';
 const programs=[
-  {name:'Brainstorming',eyebrow:'Idées → actions',copy:'Des sessions collectives pour clarifier une idée, confronter les points de vue et faire avancer un projet.',icon:Brain,image:'asset-067.jpg'},
-  {name:'Masterclass',eyebrow:'Apprendre avec méthode',copy:'Des rencontres de formation autour des compétences digitales, du business et de l’entrepreneuriat.',icon:BookOpen,image:'asset-031.jpg'},
-  {name:'Business Talk',eyebrow:'Expériences concrètes',copy:'Des conversations directes avec des entrepreneurs et professionnels pour comprendre les réalités du terrain.',icon:BriefcaseBusiness,image:'asset-023.jpg'},
-  {name:'LoveLab',eyebrow:'Grandir ensemble',copy:'Un espace d’échange qui développe la confiance, les relations humaines et l’esprit de communauté.',icon:HeartHandshake,image:'asset-066.jpg'}
+  {name:'Brainstorming',eyebrow:'Idées → actions',copy:'Des sessions collectives pour clarifier une idée, confronter les points de vue et faire avancer un projet.',icon:Brain,image:'asset-067.webp'},
+  {name:'Masterclass',eyebrow:'Apprendre avec méthode',copy:'Des rencontres de formation autour des compétences digitales, du business et de l’entrepreneuriat.',icon:BookOpen,image:'asset-031.webp'},
+  {name:'Business Talk',eyebrow:'Expériences concrètes',copy:'Des conversations directes avec des entrepreneurs et professionnels pour comprendre les réalités du terrain.',icon:BriefcaseBusiness,image:'asset-023.webp'},
+  {name:'LoveLab',eyebrow:'Grandir ensemble',copy:'Un espace d’échange qui développe la confiance, les relations humaines et l’esprit de communauté.',icon:HeartHandshake,image:'asset-066.webp'}
 ];
 const events=[
-  {name:'REDCUP',meta:'Communauté · expérience',copy:'Un rendez-vous unirCorn pensé pour connecter, apprendre et créer des souvenirs ensemble.',image:'asset-048.jpg'},
-  {name:'Descente en orphelinat',meta:'Impact social · Cameroun',copy:'Une action de proximité au service des enfants, portée par les membres de la communauté.',image:'asset-019.jpg'},
-  {name:'Cinéma Eden',meta:'Culture · rencontres',copy:'Une sortie collective qui mêle découverte, détente et liens entre membres.',image:'asset-028.jpg'}
+  {name:'REDCUP',meta:'Communauté · expérience',copy:'Un rendez-vous unirCorn pensé pour connecter, apprendre et créer des souvenirs ensemble.',image:'asset-048.webp'},
+  {name:'Descente en orphelinat',meta:'Impact social · Cameroun',copy:'Une action de proximité au service des enfants, portée par les membres de la communauté.',image:'asset-019.webp'},
+  {name:'Cinéma Eden',meta:'Culture · rencontres',copy:'Une sortie collective qui mêle découverte, détente et liens entre membres.',image:'asset-028.webp'}
 ];
 const achievements=[
- ['Tchop Zone','asset-041.jpg'],['Digital Night Spark','asset-045.jpg'],['Africa Digital Mastery','asset-059.jpg'],["Semaine de l’entreprise",'asset-032.jpg'],["Semaine de l’innovation",'asset-062.jpg'],['Miss Prodhafe','asset-046.jpg'],['Business Opportunity','asset-024.jpg'],['Podcast unirCorn','asset-033.jpg'],['Randonnée','asset-038.jpg'],['Radio Casmando','asset-034.jpg'],['Formation Croix-Rouge','asset-055.jpg'],['Marche sportive','asset-021.jpg']
+ ['Tchop Zone','asset-041.webp'],['Digital Night Spark','asset-045.webp'],['Africa Digital Mastery','asset-059.webp'],["Semaine de l’entreprise",'asset-032.webp'],["Semaine de l’innovation",'asset-062.webp'],['Miss Prodhafe','asset-046.webp'],['Business Opportunity','asset-024.webp'],['Podcast unirCorn','asset-033.webp'],['Randonnée','asset-038.webp'],['Radio Casmando','asset-034.webp'],['Formation Croix-Rouge','asset-055.webp'],['Marche sportive','asset-021.webp']
 ];
 const testimonials=[
- {name:'France Armel SOFFO DEMEKON',role:'Graphiste',image:'asset-094.jpg',quote:'J’ai acquis des compétences solides en achat en Chine et en marketing digital. Les projets pratiques m’ont permis de progresser rapidement et de gagner en confiance.'},
- {name:'Carelle KAM',role:'Étudiante',image:'asset-099.jpg',quote:'J’ai amélioré mes compétences en marketing, acquis des notions de graphisme et rencontré des personnes formidables qui ont élargi mon réseau.'},
- {name:'Alfred Michel TATPA MBATCHANKUI',role:'Marketiste',image:'asset-104.jpg',quote:'unirCorn est bien plus qu’une communauté : c’est une famille dans laquelle j’ai pu m’intégrer et apprendre énormément.'},
- {name:'Fanon NGOGA',role:'Étudiant & infographiste',image:'asset-110.jpg',quote:'Dès les débuts d’unirCorn, j’ai acquis des compétences solides qui m’ont permis de gagner de l’argent. C’est une famille et un tremplin vers l’évolution.'},
- {name:'Samuel MANDENG',role:'Consultant en affaires',image:'asset-115.jpg',quote:'Je recommande vivement unirCorn à la jeunesse. La communauté agit concrètement pour celles et ceux qui veulent acquérir de nouvelles compétences.'},
- {name:'Ridel KENFACK',role:'Étudiant & designer',image:'asset-120.jpg',quote:'Grâce aux formations de qualité, j’ai acquis de nouvelles compétences et une nouvelle source de revenus avec l’infographie.'},
- {name:'Madeleine MBEDE',role:'Étudiante & e-commerçante',image:'asset-126.jpg',quote:'Avec ses formations diversifiées et son accompagnement, unirCorn m’a permis de fructifier mon temps et de multiplier mes revenus.'},
- {name:'Darlain DE SITCHEU',role:'Web entrepreneur & PSC',image:'asset-131.jpg',quote:'Grâce à unirCorn, j’ai découvert une communauté digitale de qualité, des opportunités concrètes et j’ai lancé PSC SHOP.'},
- {name:'Merline KATOUO',role:'Infographiste',image:'asset-136.jpg',quote:'J’ai approfondi mes connaissances et développé de nouvelles compétences avec des formateurs passionnés et des contenus de qualité.'},
- {name:'Dianista TSAFACK',role:'Spécialiste marketing digital & étudiante',image:'asset-142.jpg',quote:'Les formations interactives m’ont permis d’approfondir mes connaissances et de progresser dans mon domaine.'},
- {name:'Austin MAKOUA',role:'Artiste dessinateur & étudiant',image:'asset-147.jpg',quote:'Avec unirCorn, j’ai élargi mon audience et rendu la tarification de mes œuvres plus professionnelle.'},
- {name:'Claire Irène EBONKENG NGOUPAH',role:'Community manager & monteuse vidéo',image:'asset-152.jpg',quote:'Les ressources et les rencontres faites dans la communauté m’ont permis d’exceller dans mon domaine et de continuer à évoluer.'},
- {name:'Florentin GBEDJI',role:'Étudiant',image:'asset-158.jpg',quote:'J’ai acquis des compétences en marketing et automatisation. Le soutien de la communauté m’aide dans mes études et m’offre des opportunités concrètes.'},
- {name:'Kesine KENFACK',role:'Assistante administrative & communicatrice',image:'asset-163.jpg',quote:'J’ai trouvé une famille, de belles rencontres et des projets qui ont renforcé mes compétences, mon organisation et ma confiance.'},
- {name:'Honoré NGUETSA TEUBENG',role:'Maintenancier & formateur',image:'asset-168.jpg',quote:'Les compétences acquises dans la communauté me permettent aujourd’hui de gagner des marchés que je pensais auparavant impossibles.'}
+ {name:'France Armel SOFFO DEMEKON',role:'Graphiste',image:'asset-094.webp',quote:'J’ai acquis des compétences solides en achat en Chine et en marketing digital. Les projets pratiques m’ont permis de progresser rapidement et de gagner en confiance.'},
+ {name:'Carelle KAM',role:'Étudiante',image:'asset-099.webp',quote:'J’ai amélioré mes compétences en marketing, acquis des notions de graphisme et rencontré des personnes formidables qui ont élargi mon réseau.'},
+ {name:'Alfred Michel TATPA MBATCHANKUI',role:'Marketiste',image:'asset-104.webp',quote:'unirCorn est bien plus qu’une communauté : c’est une famille dans laquelle j’ai pu m’intégrer et apprendre énormément.'},
+ {name:'Fanon NGOGA',role:'Étudiant & infographiste',image:'asset-110.webp',quote:'Dès les débuts d’unirCorn, j’ai acquis des compétences solides qui m’ont permis de gagner de l’argent. C’est une famille et un tremplin vers l’évolution.'},
+ {name:'Samuel MANDENG',role:'Consultant en affaires',image:'asset-115.webp',quote:'Je recommande vivement unirCorn à la jeunesse. La communauté agit concrètement pour celles et ceux qui veulent acquérir de nouvelles compétences.'},
+ {name:'Ridel KENFACK',role:'Étudiant & designer',image:'asset-120.webp',quote:'Grâce aux formations de qualité, j’ai acquis de nouvelles compétences et une nouvelle source de revenus avec l’infographie.'},
+ {name:'Madeleine MBEDE',role:'Étudiante & e-commerçante',image:'asset-126.webp',quote:'Avec ses formations diversifiées et son accompagnement, unirCorn m’a permis de fructifier mon temps et de multiplier mes revenus.'},
+ {name:'Darlain DE SITCHEU',role:'Web entrepreneur & PSC',image:'asset-131.webp',quote:'Grâce à unirCorn, j’ai découvert une communauté digitale de qualité, des opportunités concrètes et j’ai lancé PSC SHOP.'},
+ {name:'Merline KATOUO',role:'Infographiste',image:'asset-136.webp',quote:'J’ai approfondi mes connaissances et développé de nouvelles compétences avec des formateurs passionnés et des contenus de qualité.'},
+ {name:'Dianista TSAFACK',role:'Spécialiste marketing digital & étudiante',image:'asset-142.webp',quote:'Les formations interactives m’ont permis d’approfondir mes connaissances et de progresser dans mon domaine.'},
+ {name:'Austin MAKOUA',role:'Artiste dessinateur & étudiant',image:'asset-147.webp',quote:'Avec unirCorn, j’ai élargi mon audience et rendu la tarification de mes œuvres plus professionnelle.'},
+ {name:'Claire Irène EBONKENG NGOUPAH',role:'Community manager & monteuse vidéo',image:'asset-152.webp',quote:'Les ressources et les rencontres faites dans la communauté m’ont permis d’exceller dans mon domaine et de continuer à évoluer.'},
+ {name:'Florentin GBEDJI',role:'Étudiant',image:'asset-158.webp',quote:'J’ai acquis des compétences en marketing et automatisation. Le soutien de la communauté m’aide dans mes études et m’offre des opportunités concrètes.'},
+ {name:'Kesine KENFACK',role:'Assistante administrative & communicatrice',image:'asset-163.webp',quote:'J’ai trouvé une famille, de belles rencontres et des projets qui ont renforcé mes compétences, mon organisation et ma confiance.'},
+ {name:'Honoré NGUETSA TEUBENG',role:'Maintenancier & formateur',image:'asset-168.webp',quote:'Les compétences acquises dans la communauté me permettent aujourd’hui de gagner des marchés que je pensais auparavant impossibles.'}
 ];
 
-function Brand({compact=false,footer=false}){return <span className={'brand '+(compact?'compact':'')}><img src={`/images/unicorn-raw/${footer?'logo21.jpg':'logo2.png'}`} alt="Logo officiel unirCorn"/></span>}
+function Brand({compact=false,footer=false}){return <span className={'brand '+(compact?'compact':'')}><img src={`/images/unicorn-raw/${footer?'logo21.webp':'logo2.webp'}`} alt="Logo officiel unirCorn"/></span>}
 function SectionHead({kicker,title,copy,light=false}){return <header className={'section-head '+(light?'light':'')}><h2 className="section-primary">{kicker}</h2><p className="section-subtitle">{title}</p>{copy&&<p className="section-description">{copy}</p>}</header>}
 
 function TestimonialCarousel(){
@@ -75,7 +75,7 @@ function App(){
    </div><div className="hero-stats"><div><strong>1 500+</strong><span>membres annoncés</span></div><div><strong>10+</strong><span>pays représentés</span></div><div><strong>100K</strong><span>vies visées en 7 ans</span></div></div></section>
 
    <section className="about section" id="about"><div className="wrap reveal"><SectionHead kicker="Qui sommes-nous ?" title="Un mouvement pour transformer le potentiel en autonomie." copy="unirCorn crée un cadre où les jeunes apprennent des compétences utiles, rencontrent les bonnes personnes et passent progressivement à l’action."/>
-    <div className="about-gallery"><figure className="about-image about-team"><img src={IMG+'asset-088.jpg'} alt="Mc Donald Kouakam, fondateur d’unirCorn"/><figcaption>Mc Donald Kouakam<br/><small>Fondateur d’unirCorn</small></figcaption></figure><figure className="about-image about-detail"><img src={IMG+'asset-008.jpg'} alt="Membres de l’équipe unirCorn en tenue de la communauté"/><figcaption>L’équipe unirCorn</figcaption></figure><article className="about-vision-card"><Sparkles/><span>Notre vision</span><h3>Créer un écosystème panafricain de formation, d’insertion professionnelle et d’autonomisation.</h3></article></div>
+    <div className="about-gallery"><figure className="about-image about-team"><img src={IMG+'asset-088.webp'} alt="Mc Donald Kouakam, fondateur d’unirCorn"/><figcaption>Mc Donald Kouakam<br/><small>Fondateur d’unirCorn</small></figcaption></figure><figure className="about-image about-detail"><img src={IMG+'asset-008.webp'} alt="Membres de l’équipe unirCorn en tenue de la communauté"/><figcaption>L’équipe unirCorn</figcaption></figure><article className="about-vision-card"><Sparkles/><span>Notre vision</span><h3>Créer un écosystème panafricain de formation, d’insertion professionnelle et d’autonomisation.</h3></article></div>
     <div className="mission-grid about-missions"><article><Target/><span>Notre mission</span><h3>Former, insérer professionnellement et autonomiser les jeunes de 17 à 35 ans.</h3></article></div>
    </div></section>
 
