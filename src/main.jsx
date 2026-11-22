@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {createRoot} from 'react-dom/client';
-import {ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, Brain, BriefcaseBusiness, Check, HeartHandshake, Mail, MessageCircle, Sparkles, Target, Youtube, X} from 'lucide-react';
+import {ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, Brain, BriefcaseBusiness, Check, ChevronDown, HeartHandshake, Mail, MessageCircle, Sparkles, Target, Youtube, X} from 'lucide-react';
 import './styles.css';
 
 const IMG='/images/unicorn-raw/';
@@ -95,14 +95,26 @@ function AchievementGallery({eventOnly=false}){
 
 function MemberVoicesGallery(){
  const photos=['WhatsApp Image 2026-11-21 at 11.30.24.webp','WhatsApp Image 2026-11-21 at 11.30.24 (1).webp','WhatsApp Image 2026-11-21 at 11.30.24 (2).webp'];
- return <div className="member-voices"><h3>Moments de témoignage</h3><div>{photos.map((photo,index)=><figure key={photo}><img src={`/images/Temoignages/${encodeURIComponent(photo)}`} alt={`Photo de témoignage unirCorn ${index+1}`}/></figure>)}</div></div>
+ const [active,setActive]=useState(null);
+ const move=step=>setActive(i=>(i+step+photos.length)%photos.length);
+ useEffect(()=>{if(active===null)return;const onKey=e=>{if(e.key==='Escape')setActive(null);if(e.key==='ArrowLeft')move(-1);if(e.key==='ArrowRight')move(1)};document.addEventListener('keydown',onKey);document.body.style.overflow='hidden';return()=>{document.removeEventListener('keydown',onKey);document.body.style.overflow=''}},[active]);
+ return <div className="member-voices"><h3>Moments de témoignage</h3><div>{photos.map((photo,index)=><button className="member-voice-thumb" key={photo} onClick={()=>setActive(index)} aria-label={`Ouvrir la capture de témoignage ${index+1}`}><img src={`/images/Temoignages/${encodeURIComponent(photo)}`} alt={`Capture de témoignage unirCorn ${index+1}`}/></button>)}</div>{active!==null&&<div className="gallery-viewer" role="dialog" aria-modal="true" aria-label={`Capture de témoignage ${active+1} sur ${photos.length}`} onClick={()=>setActive(null)}><div className="gallery-viewer-panel" onClick={e=>e.stopPropagation()}><header><div><h3>Témoignages unirCorn</h3><span>{active+1} / {photos.length}</span></div><button onClick={()=>setActive(null)} aria-label="Fermer"><X/></button></header><div className="gallery-viewer-image"><img src={`/images/Temoignages/${encodeURIComponent(photos[active])}`} alt={`Capture de témoignage unirCorn ${active+1}`}/><button className="gallery-prev" onClick={()=>move(-1)} aria-label="Capture précédente"><ArrowLeft/></button><button className="gallery-next" onClick={()=>move(1)} aria-label="Capture suivante"><ArrowRight/></button></div></div></div>}</div>
+}
+
+function NavDropdown({label,items}){
+ const ref=useRef(null);
+ const columns=Array.from({length:Math.ceil(items.length/6)},(_,i)=>items.slice(i*6,(i+1)*6));
+ useEffect(()=>{const closeOutside=e=>{if(!ref.current?.contains(e.target))ref.current?.removeAttribute('open')};const closeEscape=e=>{if(e.key==='Escape'){document.querySelectorAll('.nav-menu[open]').forEach(menu=>menu.removeAttribute('open'))}};document.addEventListener('pointerdown',closeOutside);document.addEventListener('keydown',closeEscape);return()=>{document.removeEventListener('pointerdown',closeOutside);document.removeEventListener('keydown',closeEscape)}},[]);
+ return <details className="nav-menu" ref={ref}><summary>{label}<ChevronDown/></summary><div className="nav-dropdown">{columns.map((column,index)=><div className="nav-dropdown-column" key={index}>{index===0&&<small>EXPLORER {label.toUpperCase()}</small>}{column.map(item=><a href={item.href} key={item.label} onClick={()=>document.querySelectorAll('.nav-menu[open]').forEach(menu=>menu.removeAttribute('open'))}><span>{item.label}</span><small>{item.description}</small></a>)}</div>)}</div></details>
 }
 
 function App(){
  useEffect(()=>{const io=new IntersectionObserver(entries=>entries.forEach(entry=>entry.isIntersecting&&entry.target.classList.add('is-visible')),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));return()=>io.disconnect()},[]);
+ const eventMenu=[...events.map(item=>({label:item.name,description:item.meta,href:'#evenements'})),...galleries.filter(([title])=>eventGalleryTitles.has(title)).map(([title])=>({label:title,description:'Photos et moments de communauté',href:'#evenements'}))];
+ const impactMenu=galleries.filter(([title])=>!eventGalleryTitles.has(title)).map(([title])=>({label:title,description:'Voir les images',href:'#impact'}));
  return <>
   <a className="skip-link" href="#content">Aller au contenu</a>
-  <nav className="nav"><a href="#top"><Brand compact/></a><div className="nav-links"><a href="#about">À propos</a><a href="#programmes">Programmes</a><a href="#evenements">Événements</a><a href="#impact">Impact</a></div><a className="nav-cta" href="https://forms.gle/axjat3brs3cb1Tpi8" target="_blank" rel="noreferrer">Rejoindre <ArrowUpRight/></a></nav>
+  <nav className="nav"><a href="#top"><Brand compact/></a><div className="nav-links"><NavDropdown label="À propos" items={[{label:'Qui sommes-nous ?',description:'Découvrir unirCorn',href:'#about'},{label:'Notre vision et mission',description:'Notre engagement auprès des jeunes',href:'#about'},{label:'Témoignages',description:'Les parcours des membres',href:'#temoignages'}]}/><NavDropdown label="Programmes" items={programs.map(item=>({label:item.name,description:item.eyebrow,href:'#programmes'}))}/><NavDropdown label="Événements" items={eventMenu}/><NavDropdown label="Réalisations" items={impactMenu}/></div><a className="nav-cta" href="https://forms.gle/axjat3brs3cb1Tpi8" target="_blank" rel="noreferrer">Rejoindre <ArrowUpRight/></a></nav>
   <main id="content">
    <section className="hero" id="top"><div className="hero-photo"/><div className="hero-noise"/><div className="hero-inner">
     <div className="hero-copy">
