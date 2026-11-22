@@ -125,11 +125,11 @@ function App(){
     </div>
    </section>
 
+   <section className="stories section" id="temoignages"><div className="wrap reveal"><SectionHead kicker="Ils avancent avec unirCorn" title="Des compétences qui deviennent des possibilités." copy="Découvrez les parcours et les expériences de celles et ceux qui font vivre la communauté."/><MemberVoicesGallery/><TestimonialCarousel/></div></section>
+
    <section className="impact section" id="impact"><div className="wrap reveal"><SectionHead kicker="Réalisations" title="Des idées vécues sur le terrain." copy="Formations, partenariats, actions sociales et moments de communauté : chaque projet construit l’expérience unirCorn."/>
     <AchievementGallery/>
    </div></section>
-
-   <section className="stories section" id="temoignages"><div className="wrap reveal"><SectionHead kicker="Ils avancent avec unirCorn" title="Des compétences qui deviennent des possibilités." copy="Découvrez les parcours et les expériences de celles et ceux qui font vivre la communauté."/><MemberVoicesGallery/><TestimonialCarousel/></div></section>
 
     <section className="join section" id="adhesion"><div className="wrap reveal"><div className="join-panel"><div><SectionHead kicker="Devenir membre" title="Votre parcours commence ici." copy="Remplissez le formulaire, réglez les frais d’inscription, puis accédez à l’espace privé et aux activités de la communauté." light/><ol><li><span>01</span>Remplir le formulaire d’adhésion</li><li><span>02</span>Régler les frais d’inscription</li><li><span>03</span>Rejoindre l’espace privé unirCorn</li></ol></div><aside><span>Adhésion à vie</span><strong>10 500 <small>FCFA</small></strong>{/* <p>Cotisation mensuelle annoncée : 2 000 FCFA.</p> */}<ul><li><Check/>Manuel et carte de membre</li><li><Check/>Accès aux formations disponibles</li><li><Check/>Consultation de projet</li><li><Check/>Espace privé de la communauté</li></ul><a className="button button-red" href="https://forms.gle/axjat3brs3cb1Tpi8" target="_blank" rel="noreferrer">Je rejoins unirCorn
 <ArrowUpRight/></a><small className="payment-note">Les modalités de paiement sont communiquées après la demande.</small></aside></div></div></section>
