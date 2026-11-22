@@ -139,7 +139,7 @@ html,body,#root{max-width:100%;overflow-x:clip}
 .event-slide-copy h3{font-size:clamp(1.8rem,3vw,3.25rem);line-height:1.02;overflow-wrap:anywhere}
 .member-voices{margin:0 0 4rem}
 .member-voices>h3{margin:0 0 1.25rem;font-family:Syne,sans-serif;font-size:1.5rem}
-.member-voices>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;align-items:start}
+.member-voices>div:not(.gallery-viewer){display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;align-items:start}
 .member-voices figure{margin:0;overflow:hidden;background:#e7e4df}
 .member-voices figure,.member-voices img{border-radius:1rem}
 .member-voice-thumb{display:block;width:100%;padding:0;border:0;background:#e7e4df;overflow:hidden;cursor:zoom-in;border-radius:1rem}
@@ -180,8 +180,12 @@ html,body,#root{max-width:100%;overflow-x:clip}
 .gallery-viewer-panel header button,.gallery-prev,.gallery-next{display:grid;place-items:center;width:44px;height:44px;border:1px solid #ffffff45;border-radius:50%;background:#111;color:#fff;cursor:pointer}
 .gallery-viewer-image{position:relative;height:min(72vh,760px);display:grid;place-items:center;background:#050505}
 .gallery-viewer-image img{width:100%;height:100%;object-fit:contain}
-.gallery-viewer-image{display:block;height:min(72vh,760px);overflow-y:auto;overscroll-behavior:contain;scrollbar-color:#777 #151515}
-.gallery-viewer-image img{width:100%;height:auto;max-height:none;object-fit:contain}
+.gallery-viewer-image{display:flex;justify-content:center;align-items:flex-start;height:min(72vh,760px);overflow-y:auto;overscroll-behavior:contain;scrollbar-color:#777 #151515}
+.gallery-viewer-image img{display:block;width:auto;max-width:100%;height:auto;max-height:none;margin-inline:auto;object-fit:contain}
+.gallery-viewer{display:flex;align-items:center;justify-content:center;width:100vw;height:100dvh;box-sizing:border-box}
+.gallery-viewer-panel{width:min(1100px,calc(100vw - 3rem));max-height:calc(100dvh - 3rem);margin:auto;display:flex;flex-direction:column}
+.gallery-viewer-panel>header{flex:none}
+.gallery-viewer-image{height:auto;max-height:calc(100dvh - 8rem);flex:1 1 auto;min-height:0}
 .gallery-prev,.gallery-next{position:absolute;top:50%;transform:translateY(-50%)}
 .gallery-prev{left:1rem}.gallery-next{right:1rem}
 @media(max-width:700px){.gallery-grid{columns:2}.event-photo-gallery{margin-top:3rem}.gallery-cover>b{left:.8rem;bottom:.8rem;font-size:.95rem}.gallery-count{top:.7rem;right:.7rem;font-size:.67rem}.gallery-viewer{padding:.65rem}.gallery-viewer-image{height:70vh}.gallery-prev{left:.5rem}.gallery-next{right:.5rem}}
