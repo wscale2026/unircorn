@@ -19,10 +19,10 @@ const achievements=[
  ['Tchop Zone','asset-041.webp'],['Digital Night Spark','asset-045.webp'],['Africa Digital Mastery','asset-059.webp'],["Semaine de l’entreprise",'asset-032.webp'],["Semaine de l’innovation",'asset-062.webp'],['Miss Prodhafe','asset-046.webp'],['Business Opportunity','asset-024.webp'],['Podcast unirCorn','asset-033.webp'],['Randonnée','asset-038.webp'],['Radio Casmando','asset-034.webp'],['Formation Croix-Rouge','asset-055.webp'],['Marche sportive','asset-021.webp']
 ];
 const galleries=[
- ['Africa Digital Mastery','Africa Digital Mastery',['WhatsApp Image 2026-11-21 at 11.55.45.webp','WhatsApp Image 2026-11-21 at 11.55.45 (1).webp']],
+ ['Africa Digital Mastery','Africa Digital Mastery',['photo_2026-11-24_03-20-18.webp','WhatsApp Image 2026-11-21 at 11.55.45.webp','WhatsApp Image 2026-11-21 at 11.55.45 (1).webp']],
  ['Brainstorming','Brainstorming',['WhatsApp Image 2026-11-21 at 11.32.33.webp','WhatsApp Image 2026-11-21 at 11.32.34.webp','WhatsApp Image 2026-11-21 at 11.32.40.webp']],
  ['Digital Night Spark','Digital Night Spark',['Digital Night Spark.webp']],
- ['En Radio','En Radio',['WhatsApp Image 2026-11-21 at 11.52.17.webp','WhatsApp Image 2026-11-21 at 11.52.18.webp']],
+ ['Radio','En Radio',['photo_2026-11-24_03-19-45.webp','photo_2026-11-24_03-20-30.webp','WhatsApp Image 2026-11-21 at 11.52.17.webp','WhatsApp Image 2026-11-21 at 11.52.18.webp']],
  ['MasterClass','MasterClass',['WhatsApp Image 2026-11-21 at 11.31.22.webp','WhatsApp Image 2026-11-21 at 11.31.23.webp','WhatsApp Image 2026-11-21 at 11.31.23 (1).webp','WhatsApp Image 2026-11-21 at 11.31.24.webp']],
  ['Orphelinat','Orphelinat',['WhatsApp Image 2026-11-21 at 11.48.00.webp','WhatsApp Image 2026-11-21 at 11.48.03.webp']],
  ['Podcast unirCorn','Poadcast Unircorn',['WhatsApp Image 2026-11-21 at 11.50.21.webp','WhatsApp Image 2026-11-21 at 11.50.21 (1).webp','WhatsApp Image 2026-11-21 at 11.50.22.webp']],
@@ -34,7 +34,8 @@ const galleries=[
  ['Business Opportunity','unicorn-raw',['asset-024.webp']],
  ['Randonnée','unicorn-raw',['asset-038.webp']],
  ['Formation Croix-Rouge','unicorn-raw',['asset-055.webp']],
- ['Marche sportive','unicorn-raw',['asset-021.webp']],
+ ['Formation en Secourisme','Formation en Secourisme',['photo_2026-11-24_03-20-42.webp','photo_2026-11-24_03-20-49.webp']],
+ ['Marche sportive','Marche sportive',['photo_2026-11-24_03-20-56.webp','photo_2026-11-24_03-21-02.webp','photo_2026-11-24_03-21-08.webp']],
 ];
 const testimonials=[
  {name:'France Armel SOFFO DEMEKON',role:'Graphiste',image:'asset-094.webp',quote:'J’ai acquis des compétences solides en achat en Chine et en marketing digital. Les projets pratiques m’ont permis de progresser rapidement et de gagner en confiance.'},
@@ -80,7 +81,7 @@ function EventCarousel(){
  </div>
 }
 
-const eventGalleryTitles=new Set(['REDCUP','Digital Night Spark',"Semaine de l’entreprise","Semaine de l’innovation",'Business Opportunity','Randonnée','Marche sportive']);
+const eventGalleryTitles=new Set(['REDCUP','Digital Night Spark',"Semaine de l’entreprise","Semaine de l’innovation",'Business Opportunity','Randonnée']);
 function AchievementGallery({eventOnly=false}){
  const items=galleries.filter(([title])=>eventGalleryTitles.has(title)===eventOnly);
  const [selected,setSelected]=useState(null); const [photo,setPhoto]=useState(0);
@@ -129,7 +130,7 @@ function App(){
    </div></section>
 
    <section className="programs section" id="programmes"><div className="wrap reveal"><SectionHead kicker="Nos programmes" title="Quatre formats pour apprendre autrement." copy="Des rendez-vous collectifs construits autour des compétences, de l’expérience et du passage à l’action."/>
-    <div className="program-grid">{programs.map(({name,eyebrow,copy,icon:Icon,image},i)=><article className="program-card" key={name}><div className="program-number">0{i+1}</div><div className="program-media"><img src={image.startsWith('/')?image:IMG+image} alt={`Session ${name} avec les membres unirCorn`}/><span><Icon/></span></div><div className="program-text"><small>{eyebrow}</small><h3>{name}</h3><p>{copy}</p></div></article>)}</div>
+    <div className="program-grid">{programs.map(({name,eyebrow,copy,icon:Icon,image})=><article className="program-card" key={name}><div className="program-media"><img src={image.startsWith('/')?image:IMG+image} alt={`Session ${name} avec les membres unirCorn`}/><span><Icon/></span></div><div className="program-text"><small>{eyebrow}</small><h3>{name}</h3><p>{copy}</p></div></article>)}</div>
    </div></section>
 
    <section className="events section" id="evenements"><div className="wrap reveal"><SectionHead kicker="Nos événements" title="Se rencontrer change la trajectoire." copy="Nos événements donnent un visage au réseau : on échange, on découvre et on agit ensemble." light/>
@@ -148,7 +149,7 @@ function App(){
 
    <section className="contact section" id="contact"><div className="wrap reveal"><SectionHead kicker="Parlons-nous" title="Une question avant de rejoindre ?" copy="L’équipe unirCorn répond par WhatsApp ou par e-mail."/><div className="contact-row"><a href="https://wa.me/237691879956" target="_blank" rel="noreferrer"><MessageCircle/><span><small>Téléphone & WhatsApp</small><b>+237 691 879 956</b></span><ArrowUpRight/></a><a href="mailto:unirCorn.Officiel@gmail.com"><Mail/><span><small>Adresse e-mail</small><b>unirCorn.Officiel@gmail.com</b></span><ArrowUpRight/></a></div><div className="social-row"><a href="https://www.facebook.com/share/18n4BnADaV/" target="_blank" rel="noreferrer">Facebook <ArrowUpRight/></a><a href="https://youtu.be/cpCpj00PypA?si=mifcp3aeYjy52mVY" target="_blank" rel="noreferrer"><Youtube/> Voir unirCorn sur YouTube <ArrowUpRight/></a></div></div></section>
   </main>
-  <footer className="footer"><div className="wrap"><div className="footer-main"><div><Brand footer/><p>Former. Connecter. Autonomiser.</p></div><nav><a href="#about">À propos</a><a href="#programmes">Programmes</a><a href="#evenements">Événements</a><a href="#adhesion">Adhésion</a></nav><div className="footer-contact"><a href="tel:+237691879956">+237 691 879 956</a><a href="mailto:unirCorn.Officiel@gmail.com">unirCorn.Officiel@gmail.com</a></div></div><div className="footer-bottom"><span>© 2026 unirCorn. Tous droits réservés.</span><span>Cameroun · Communauté panafricaine</span></div></div></footer>
+  <footer className="footer"><div className="wrap"><div className="footer-main"><div><Brand footer/><p>Apprends. Évolue. Gagne.</p></div><nav><a href="#about">À propos</a><a href="#programmes">Programmes</a><a href="#evenements">Événements</a><a href="#adhesion">Adhésion</a></nav><div className="footer-contact"><a href="tel:+237691879956">+237 691 879 956</a><a href="mailto:unirCorn.Officiel@gmail.com">unirCorn.Officiel@gmail.com</a></div></div><div className="footer-bottom"><span>© 2026 unirCorn. Tous droits réservés.</span><span>Cameroun · Communauté panafricaine</span></div></div></footer>
   <a className="whatsapp" href="https://wa.me/237691879956" target="_blank" rel="noreferrer" aria-label="Contacter unirCorn sur WhatsApp"><MessageCircle/></a>
  </>
 }

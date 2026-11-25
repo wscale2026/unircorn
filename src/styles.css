@@ -208,4 +208,15 @@ html,body,#root{max-width:100%;overflow-x:clip}
   .footer .brand{height:120px}
 }
 
+.nav .brand.compact{width:116px;height:66px}
+@media(max-width:700px){.nav .brand.compact{width:90px;height:51px}}
+@media(max-width:700px){
+  .about-gallery .about-image,
+  .about-gallery .about-vision-card,
+  .about-missions article{border-radius:1rem;overflow:hidden}
+}
+.program-media{border-radius:1rem;overflow:hidden}
+.program-media img{border-radius:inherit}
+.about-missions article{border-radius:1rem;overflow:hidden}
+
 
